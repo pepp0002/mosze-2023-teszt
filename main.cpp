@@ -22,6 +22,8 @@ int main()
     }
     atlag /= N_ELEMENTS;
     std::cout << "Atlag: " << atlag << std::endl;
-    delete[] b; 
+    delete[] b;
+
+    std::cout << "Minden hiba ki lett javítva!" << std::endl;
     return 0;
 }
