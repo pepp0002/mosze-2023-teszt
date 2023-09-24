@@ -4,23 +4,24 @@ constexpr int N_ELEMENTS = 100;
 
 int main()
 {
-    int *b = new int[NELEMENTS];  // Hiba: NELEMENTS helyett N_ELEMENTS
-    std::cout << '1-100 ertekek duplazasa'  // Hiba: Az idézőjelek helyett kettős idézőjeleket kell használni a szövegben
-    for (int i = 0;)  // Hiba: Hiányzik az i értékének kezdő értéke
+    int *b = new int[N_ELEMENTS];
+    std::cout << "1-100 ertekek duplazasa" << std::endl;
+    for (int i = 0; i < N_ELEMENTS; i++)
     {
         b[i] = i * 2;
     }
-    for (int i = 0; i; i++)  // Hiba: A második for ciklus feltétele mindig hamis, így soha nem fut le
+    for (int i = 0; i < N_ELEMENTS; i++)
     {
-        std::cout << "Ertek:"  // Hiba: Hiányzik a << operátor után a b[i] változó
-    }    
+        std::cout << "Ertek: " << b[i] << std::endl;
+    }
     std::cout << "Atlag szamitasa: " << std::endl;
-    int atlag;
-    for (int i = 0; i < N_ELEMENTS, i++)  // Hiba: A vessző helyett pontosvesszőt kell használni a ciklus számlálójánál
+    int atlag = 0; 
+    for (int i = 0; i < N_ELEMENTS; i++)
     {
-        atlag += b[i]  // Hiba: Hiányzik a művelet jobb oldaláról a befejező pontosvessző
+        atlag += b[i];
     }
     atlag /= N_ELEMENTS;
     std::cout << "Atlag: " << atlag << std::endl;
+    delete[] b; 
     return 0;
 }
